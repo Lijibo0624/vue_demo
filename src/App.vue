@@ -1,27 +1,33 @@
 <template>
   <div id="app">
-    <animate/>
+    <button @click="getData">点击获取服务器数据</button>
+    <!-- <div>{{acceptData}}</div> -->
   </div>
 </template>
 
 <script>
-import animate from './components/animate'
-
+import axios from 'axios'
 export default {
   name: 'App',
   components: {
-    animate
+    // acceptData: ''
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+    getData () {
+      console.log('qingqiu')
+      axios.get('/api')
+        .then((data) => {
+          // this.acceptData = data.data
+          console.log(data.data)
+        })
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

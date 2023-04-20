@@ -5,6 +5,18 @@
 const path = require('path')
 
 module.exports = {
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://127.20.10.8:5000',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  },
   dev: {
 
     // Paths
