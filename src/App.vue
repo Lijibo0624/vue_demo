@@ -1,30 +1,22 @@
 <template>
   <div id="app">
-    <button @click="getData">点击获取服务器数据</button>
+    <count/>
     <!-- <div>{{acceptData}}</div> -->
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import count from '@/components/count'
 export default {
   name: 'App',
   components: {
-    // acceptData: ''
+    count
   },
   data () {
     return {
     }
   },
   methods: {
-    getData () {
-      console.log('qingqiu')
-      axios.get('/api')
-        .then((data) => {
-          // this.acceptData = data.data
-          console.log(data.data)
-        })
-    }
   }
 }
 </script>
